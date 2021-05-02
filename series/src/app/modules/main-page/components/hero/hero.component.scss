@@ -1,0 +1,12 @@
+@import '../../../../../styles.scss';
+
+.hero{
+    background-image: $gradient-primary, url('../../../../../assets/images/tv-hero.jpg');
+    height: 90vh;
+    background-size: cover;
+    padding-bottom: 30vh;
+}
+
+section h3{
+    padding-left: .2rem;
+}

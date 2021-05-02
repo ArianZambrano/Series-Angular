@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">MY SERIES</a>
+        <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div [ngbCollapse]="isCollapsed" class="collapse navbar-collapse" id="navbarToggler">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link active mr-5" href="#" (click)="isCollapsed=true">
+                    Home
+                </a>
+                <a class="nav-item nav-link mr-5" href="https://github.com/ArianZambrano" target="_blank" (click)="isCollapsed=true">
+                    About Me
+                </a>
+                <a class="nav-item nav-link mr-5" href="https://github.com/ArianZambrano" target="_blank" (click)="isCollapsed=true">
+                    Contact
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
