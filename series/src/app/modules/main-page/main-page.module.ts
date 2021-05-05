@@ -5,19 +5,22 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { SeriesComponent } from './components/series/series.component';
 import { MainPageComponent } from './main-page.component';
+import { PipesModule } from '../../pipes/pipes.module'
 
 @NgModule({
   declarations: [
     NavbarComponent,
     HeroComponent,
     SeriesComponent,
-    MainPageComponent
+    MainPageComponent,
   ],
   imports: [
     CommonModule,
-    NgbModule
+    NgbModule,
+    PipesModule
   ],
   exports: [NavbarComponent],
+  providers: [],
   bootstrap: [NavbarComponent]
 })
 export class MainPageModule { }

@@ -1,1 +1,14 @@
-<p>series works!</p>
+<div class="container mt-5">
+    <div class="card-deck">
+        <div *ngFor="let k of series | keys" class="card">
+            <img class="card-img-top" src="{{series[k].image}}" alt="{{series[k].name}}" height="200px">
+            <div class="card-body">
+                <h5 class="card-title">{{series[k].name}}</h5>
+                <p class="card-text">{{series[k].description}}</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted"><i>Updated by: Author</i></small>
+            <div>
+        </div>
+    </div>
+</div>
