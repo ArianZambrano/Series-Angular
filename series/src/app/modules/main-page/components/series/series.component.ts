@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Serie } from '../../../../models/serie/serie';
 import { SeriesService } from '../../../../services/series-service/series.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { SeriesService } from '../../../../services/series-service/series.servic
   styleUrls: ['./series.component.scss']
 })
 export class SeriesComponent implements OnInit {
-  public series:any =[];
+  public series:Serie[] =[];
 
   constructor(private _seriesService: SeriesService) {}
 

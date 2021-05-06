@@ -1,14 +1,28 @@
-<div class="container mt-5">
-    <div class="card-deck">
+<section class="container"> 
+    <button type="button" class="btn btn-outline-primary my-4">
+        <i class="fa fa-plus"></i>
+        Add Serie
+    </button>
+    <div class="card-deck mb-5">
         <div *ngFor="let k of series | keys" class="card">
             <img class="card-img-top" src="{{series[k].image}}" alt="{{series[k].name}}" height="200px">
             <div class="card-body">
-                <h5 class="card-title">{{series[k].name}}</h5>
+                <div class="d-flex">
+                    <h5 class="card-title">{{series[k].name}}</h5>
+                    <div class="icons ml-auto">
+                        <a href="#">
+                            <i class="fa fa-edit fa-lg mx-2 icon-edit"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fa fa-trash fa-lg mx-2 icon-delete"></i>
+                        </a>
+                    </div>
+                </div>
                 <p class="card-text">{{series[k].description}}</p>
             </div>
             <div class="card-footer">
-                <small class="text-muted"><i>Updated by: Author</i></small>
-            <div>
+                <small class="text-muted"><i>Updated by: {{series[k].author}}</i></small>
+            </div>
         </div>
     </div>
-</div>
+</section>
