@@ -10,7 +10,7 @@
                 <div class="d-flex">
                     <h5 class="card-title">{{series[k].name}}</h5>
                     <div class="icons ml-auto">
-                        <a href="#">
+                        <a [routerLink]="['/edit', series[k].name]">
                             <i class="fa fa-edit fa-lg mx-2 icon-edit"></i>
                         </a>
                         <a href="#">

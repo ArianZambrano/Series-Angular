@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { MainPageModule } from './modules/main-page/main-page.module';
+import { EditSerieModule } from './modules/edit-serie/edit-serie.module'
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { MainPageModule } from './modules/main-page/main-page.module';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     HttpClientModule, 
-    MainPageModule
+    MainPageModule,
+    EditSerieModule
   ],
   bootstrap: [AppComponent]
 })
