@@ -1,27 +1,31 @@
-<section class="container"> 
-    <button type="button" class="btn btn-outline-primary my-4">
-        <i class="fa fa-plus"></i>
-        Add Serie
-    </button>
+<section class="container">
+    <a [routerLink]="['/create']">
+        <button type="button" class="btn btn-outline-primary my-4">
+            <i class="fa fa-plus"></i>
+            Add Serie
+        </button>
+    </a> 
     <div class="card-deck mb-5">
-        <div *ngFor="let k of series | keys" class="card">
-            <img class="card-img-top" src="{{series[k].image}}" alt="{{series[k].name}}" height="200px">
-            <div class="card-body">
-                <div class="d-flex">
-                    <h5 class="card-title">{{series[k].name}}</h5>
-                    <div class="icons ml-auto">
-                        <a [routerLink]="['/edit', series[k].name]">
-                            <i class="fa fa-edit fa-lg mx-2 icon-edit"></i>
-                        </a>
-                        <a href="#">
-                            <i class="fa fa-trash fa-lg mx-2 icon-delete"></i>
-                        </a>
+        <div *ngFor="let k of series | keys">
+            <div class="card abs-card">
+                <img class="card-img-top" src="{{series[k].image}}" alt="{{series[k].name}}" height="200px">
+                <div class="card-body">
+                    <div class="d-flex">
+                        <h5 class="card-title">{{series[k].name}}</h5>
+                        <div class="icons ml-auto">
+                            <a [routerLink]="['/edit', series[k].name]">
+                                <i class="fa fa-edit fa-lg mx-2 icon-edit"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fa fa-trash fa-lg mx-2 icon-delete"></i>
+                            </a>
+                        </div>
                     </div>
+                    <p class="card-text">{{series[k].description}}</p>
                 </div>
-                <p class="card-text">{{series[k].description}}</p>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted"><i>Updated by: {{series[k].author}}</i></small>
+                <div class="card-footer">
+                    <small class="text-muted"><i>Updated by: {{series[k].author}}</i></small>
+                </div>
             </div>
         </div>
     </div>

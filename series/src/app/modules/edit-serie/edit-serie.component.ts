@@ -13,16 +13,26 @@ export class EditSerieComponent implements OnInit {
   name: string | null = ''
 
   constructor(private _activatedRoute: ActivatedRoute,
-              private _seriesService: SeriesService) {}
-
-  ngOnInit(): void {
-    let series: any;
-    this._activatedRoute.paramMap.subscribe(params => {
-      this.name = params.get('name');
+              private _seriesService: SeriesService) {
+    let series: any
+    this._activatedRoute.params.subscribe(params => {
+      this.name = params['name'];
       this._seriesService.getSeries().subscribe(data => {
         series = data
-        this.serie = series.find((s: any) => s.name == this.name)
-      });
+        this.serie = series.find((s: any) => s.name == this.name);
+      })
     })
+  }
+
+  ngOnInit(): void {
+  }
+
+  update() {
+    let series: any;
+    this._seriesService.getSeries().subscribe(data => {
+      series = data
+      this.serie = series.find((s: any) => s.name == this.name);
+      this._seriesService.updateSerie(this.serie, this.name).subscribe(data => console.log(data))
+    });
   }
 }

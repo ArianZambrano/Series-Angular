@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule }   from '@angular/forms';
 import { SharedModule} from '../shared/shared.module';
 import { EditSerieComponent } from './edit-serie.component';
 
@@ -9,7 +10,8 @@ import { EditSerieComponent } from './edit-serie.component';
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ]
 })
 export class EditSerieModule { }

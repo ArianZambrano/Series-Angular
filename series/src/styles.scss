@@ -1,10 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400;500&display=swap');
-
+@import '~ngx-toastr/toastr';
 @import "../node_modules/bootstrap/scss/bootstrap";
 @import "../node_modules/font-awesome/scss/font-awesome";
 
 $font-family-sans-serif: 'Noto Sans JP', sans-serif;
 $gradient-primary: linear-gradient(rgba(102, 51, 0, 0.6), rgba(153,102,51,0.2));
+$primary: #5A5352;
+
+.btn-primary{
+  background-color: $primary !important;
+  border: $primary !important;
+}
+
+textarea{
+   min-height: 100px;
+ }
 
 h1{
     /* Extra small devices (phones, less than 768px) */
@@ -25,3 +35,22 @@ h1{
       font-size: 80px;
     }
   }
+h2{
+      /* Extra small devices (phones, less than 768px) */
+      font-size: 25px;
+  
+      /* Small devices (tablets, 768px and up) */
+      @media (min-width: 768px) {
+        font-size: 30px;
+      }
+    
+      /* Medium devices (desktops, 992px and up) */
+      @media (min-width: 992px) {
+        font-size: 35px;
+      }
+    
+      /* Large devices (large desktops, 1200px and up) */
+      @media (min-width: 1200px) {
+        font-size: 45px;
+      }
+}
