@@ -7,5 +7,12 @@
 }
 
 .abs-card{
-    width: 21.5rem;
+    min-width: 80%;
+    max-width: 21.5rem;
+    height: 100vh;
+}
+
+.scrollable{
+    overflow-y: auto;
+    max-height: 88%;
 }

@@ -21,7 +21,7 @@ const routes: Routes = [
     component: UploadSerieComponent
   },
   {
-    path: 'edit/:name',
+    path: 'edit',
     component: EditSerieComponent,
   }
 ];
