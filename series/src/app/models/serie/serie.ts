@@ -3,4 +3,5 @@ export class Serie {
     description?: string;
     image?: any;
     author?: string;
+    key$?: string
 }

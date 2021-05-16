@@ -4,7 +4,6 @@ import { RouterModule } from '@angular/router';
 import { HeroComponent } from './components/hero/hero.component';
 import { SeriesComponent } from './components/series/series.component';
 import { MainPageComponent } from './main-page.component';
-import { PipesModule } from '../../pipes/pipes.module';
 import { SharedModule } from '../shared/shared.module'
 
 @NgModule({
@@ -16,7 +15,6 @@ import { SharedModule } from '../shared/shared.module'
   imports: [
     CommonModule,
     RouterModule,
-    PipesModule,
     SharedModule
   ],
   exports: [MainPageComponent],

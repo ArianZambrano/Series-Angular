@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Serie } from 'src/app/models/serie/serie';
 import { SeriesService } from 'src/app/services/series-service/series.service';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -15,6 +16,7 @@ export class UploadSerieComponent implements OnInit {
 
   constructor(private _seriesService: SeriesService,
               private _toastr: ToastrService,
+              private router: Router,
               private form: FormBuilder) {
       this.serieForm = this.form.group({
         name: ['', Validators.required],
@@ -29,8 +31,12 @@ export class UploadSerieComponent implements OnInit {
 
   create(){
     this.serie = this.serieForm.value;
-    this._seriesService.setSerie(this.serie).subscribe(
-      () => this._toastr.success('Serie added correctly!'),
+    this._seriesService.newSerie(this.serie).subscribe(
+      (data) => {
+        this._toastr.success('Serie added correctly!'); 
+        console.log(data)
+        this.router.navigateByUrl('/series')  
+      },
       error => this._toastr.error('There was an error :( try it again')
     )
   }

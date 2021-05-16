@@ -6,14 +6,14 @@
         </button>
     </a> 
     <div class="card-deck">
-        <div *ngFor="let k of series | keys">
+        <div *ngFor="let serie of series">
             <div class="card abs-card mb-5">
-                <img class="card-img-top" src="{{series[k].image}}" alt="{{series[k].name}}" height="200px">
+                <img class="card-img-top" src="{{serie.image}}" alt="{{serie.name}}" height="200px">
                     <div class="card-body">
                         <div class="d-flex">
-                            <h5 class="card-title">{{series[k].name}}</h5>
+                            <h5 class="card-title">{{serie.name}}</h5>
                             <div class="icons ml-auto">
-                                <a [routerLink]="['/edit']">
+                                <a [routerLink]="['/edit', serie.key$]">
                                     <i class="fa fa-edit fa-lg mx-2 icon-edit"></i>
                                 </a>
                                 <a href="#">
@@ -22,11 +22,11 @@
                             </div>
                         </div>
                         <div class="scrollable">
-                            <p class="card-text">{{series[k].description}}</p>
+                            <p class="card-text">{{serie.description}}</p>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted"><i>Updated by: {{series[k].author}}</i></small>
+                        <small class="text-muted"><i>Updated by: {{serie.author}}</i></small>
                     </div>
             </div>
         </div>

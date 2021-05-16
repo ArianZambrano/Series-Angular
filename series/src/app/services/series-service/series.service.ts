@@ -21,7 +21,7 @@ export class SeriesService {
     )
   }
 
-  setSerie(serie: Serie | undefined): Observable<Serie>{
+  newSerie(serie: Serie | undefined): Observable<Serie>{
     let body = JSON.stringify(serie);
     let headers = new HttpHeaders({
       'Content-Type': 'application/json'
@@ -32,7 +32,15 @@ export class SeriesService {
     }))
   }
 
-  updateSerie(serie: Serie, key$: string | null){
+  getSerieByKey(key$: string): Observable<Serie>{
+    let url = `${this.serieURL}/${key$}.json`;
+    return this.http.get(url).pipe(map(res => {
+      console.log(res);
+      return res;
+    }))
+  }
+
+  updateSerie(serie: Serie, key$: string): Observable<Serie>{
     let body = JSON.stringify(serie);
     let headers = new HttpHeaders({
       'Content-Type': 'application/json'
