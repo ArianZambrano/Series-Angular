@@ -4,31 +4,37 @@
             <i class="fa fa-plus"></i>
             Add Serie
         </button>
-    </a> 
+    </a>
     <div class="card-deck">
         <div *ngFor="let serie of series">
             <div class="card abs-card mb-5">
                 <img class="card-img-top" src="{{serie.image}}" alt="{{serie.name}}" height="200px">
-                    <div class="card-body">
-                        <div class="d-flex">
-                            <h5 class="card-title">{{serie.name}}</h5>
-                            <div class="icons ml-auto">
-                                <a [routerLink]="['/edit', serie.key$]">
-                                    <i class="fa fa-edit fa-lg mx-2 icon-edit"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fa fa-trash fa-lg mx-2 icon-delete"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="scrollable">
-                            <p class="card-text">{{serie.description}}</p>
+                <div class="card-body">
+                    <div class="d-flex">
+                        <h5 class="card-title">{{serie.name}}</h5>
+                        <div class="icons ml-auto">
+                            <a [routerLink]="['/edit', serie.key$]">
+                                <i class="fa fa-edit fa-lg mx-2 icon-edit"></i>
+                            </a>
+                            <a (click)="deleteSerie(serie.key$!)">
+                                <i class="fa fa-trash fa-lg mx-2 icon-delete"></i>
+                            </a>
                         </div>
                     </div>
-                    <div class="card-footer">
-                        <small class="text-muted"><i>Updated by: {{serie.author}}</i></small>
+                    <div class="scrollable">
+                        <p class="card-text">{{serie.description}}</p>
                     </div>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted"><i>Updated by: {{serie.author}}</i></small>
+                </div>
             </div>
         </div>
+    </div>
+    <div *ngIf="series.length === 0 && !loading" class="alert alert-info" role="alert">
+        No hay series que mostrar
+    </div>
+    <div *ngIf="loading" class="alert alert-warning" role="alert">
+        Cargando...
     </div>
 </section>

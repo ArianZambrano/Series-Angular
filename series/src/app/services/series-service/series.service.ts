@@ -51,4 +51,11 @@ export class SeriesService {
       return res;
     }));
   }
+
+  deleteSerie(key$: string){
+    let url = `${this.serieURL}/${key$}.json`;
+    return this.http.delete(url).pipe(map(res => {
+      return res;
+    }))
+  }
 }
