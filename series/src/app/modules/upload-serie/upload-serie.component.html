@@ -1,22 +1,22 @@
 <app-navbar></app-navbar>
 <section class="container my-3">
     <h2 class="text-center my-5">Add your serie!</h2>
-    <div class="container abs-center mx-auto mb-4">
+    <div class="mx-auto mb-4">
         <form [formGroup]="this.serieForm" class="abs-form mx-auto" (submit)="create()">
             <div class="form-group">
-                <label for="">Name: </label>
+                <label for="">Name </label>
                 <input class="form-control" type="text" formControlName="name">     
             </div>
             <div class="form-group">
-                <label for="">Description: </label>
+                <label for="">Description </label>
                 <textarea class="txtarea form-control" formControlName="description"></textarea>     
             </div>
             <div class="form-group">
-                <label for="">Image (add a link, not files for now): </label>
+                <label for="">Image (add a link, not files for now) </label>
                 <input class="form-control" type="text" formControlName="image">     
             </div>
             <div class="form-group">
-                <label for="">Author: </label>
+                <label for="">Author </label>
                 <input class="form-control" type="text" formControlName="author">     
             </div>
             <button class="btn-primary p-3 rounded my-2" type="submit">Add Serie</button>

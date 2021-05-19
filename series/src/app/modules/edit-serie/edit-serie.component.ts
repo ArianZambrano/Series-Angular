@@ -30,7 +30,7 @@ export class EditSerieComponent implements OnInit {
   update() {
     this._seriesService.updateSerie(this.serie, this.id).subscribe(
       () => {
-        this._toastr.success('Serie added correctly!')
+        this._toastr.success('Serie updated correctly!')
         this.router.navigateByUrl('/series')
       },
       error => this._toastr.error('There was an error :( try it again')
