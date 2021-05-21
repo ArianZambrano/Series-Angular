@@ -30,14 +30,24 @@ export class UploadSerieComponent implements OnInit {
   }
 
   create(){
-    this.serie = this.serieForm.value;
-    this._seriesService.newSerie(this.serie).subscribe(
-      (data) => {
-        this._toastr.success('Serie added correctly!'); 
-        console.log(data)
-        this.router.navigateByUrl('/series')  
-      },
-      error => this._toastr.error('There was an error :( try it again')
-    )
+    if (!this.serieForm.valid){
+      this._toastr.error('Complete all the fields');
+    }
+    else{
+      this.serie = this.serieForm.value;
+      this._seriesService.newSerie(this.serie).subscribe(
+        (data) => {
+          this._toastr.success('Serie added correctly!'); 
+          console.log(data)
+          this.router.navigateByUrl('/series')  
+        },
+        error => this._toastr.error('There was an error :( try it again')
+      )
+    }
+    
+  }
+
+  invalid(attr: string){
+    return this.serieForm.get(attr)?.invalid && this.serieForm.get(attr)?.touched;
   }
 }

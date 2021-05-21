@@ -2,24 +2,38 @@
 <section class="container my-3">
     <h2 class="text-center my-5">Add your serie!</h2>
     <div class="mx-auto mb-4">
-        <form [formGroup]="this.serieForm" class="abs-form mx-auto" (submit)="create()">
+        <form [formGroup]="this.serieForm" class="abs-form mx-auto" (ngSubmit)="create()">
             <div class="form-group">
                 <label for="">Name </label>
-                <input class="form-control" type="text" formControlName="name">     
+                <input class="form-control" type="text" formControlName="name" [class.border-danger]="invalid('name')">     
             </div>
+            <small class="text-danger" *ngIf="invalid('name')">
+                Invalid Name
+            </small>
             <div class="form-group">
                 <label for="">Description </label>
-                <textarea class="txtarea form-control" formControlName="description"></textarea>     
+                <textarea class="txtarea form-control" formControlName="description" [class.border-danger]="invalid('description')"></textarea>     
             </div>
+            <small class="text-danger" *ngIf="invalid('description')">
+                Invalid Description
+            </small>
             <div class="form-group">
                 <label for="">Image (add a link, not files for now) </label>
-                <input class="form-control" type="text" formControlName="image">     
+                <input class="form-control" type="text" formControlName="image" [class.border-danger]="invalid('image')">     
             </div>
+            <small class="text-danger" *ngIf="invalid('image')">
+                Invalid Image
+            </small>
             <div class="form-group">
                 <label for="">Author </label>
-                <input class="form-control" type="text" formControlName="author">     
+                <input class="form-control" type="text" formControlName="author" [class.border-danger]="invalid('author')">     
             </div>
-            <button class="btn-primary p-3 rounded my-2" type="submit">Add Serie</button>
+            <small class="text-danger" *ngIf="invalid('author')">
+                Invalid Author
+            </small>
+            <div class="button">
+                <button class="btn-primary p-3 rounded my-2" type="submit">Add Serie</button>
+            </div>
         </form>
     </div>    
 </section>

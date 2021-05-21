@@ -2,7 +2,7 @@
 <section class="container my-3">
     <h2 class="text-center my-5">Edit your serie</h2>
     <div class="mx-auto mb-4"> 
-        <form #editSerieForm="ngForm" class="abs-form container"(submit)="update()">
+        <form #editSerieForm="ngForm" class="abs-form container"(ngSubmit)="update()">
             <div class="form-group">
                 <label for="name">Name </label>
                 <input class="form-control" type="text" [(ngModel)]="serie.name" name="name" readonly>
